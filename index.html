@@ -86,6 +86,16 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--te
 .risk-txt{font-size:13px;color:#1A1A1A;line-height:1.6;}
 .mit-txt{font-size:13px;color:#065F46;line-height:1.6;font-weight:500;}
 .empty{text-align:center;padding:3rem;color:#5A5A5A;font-size:14px;}
+.committee-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:12px;}
+.committee-table tr{border-bottom:1px solid #F2F2F2;}
+.committee-table tr:last-child{border-bottom:none;}
+.committee-table td{padding:7px 8px;vertical-align:middle;}
+.committee-table td:first-child{font-weight:600;color:#3D1E5F;width:44%;padding-left:2px;}
+.ct-badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;white-space:nowrap;}
+.ct-received{background:#E6F5E0;color:#2D6B0F;}
+.ct-pending{background:#FDF6E0;color:#8B6820;}
+.ct-no-response{background:#FCEBEB;color:#A32D2D;}
+.ct-meeting{background:#EDE8F5;color:#3D1E5F;}
 .footer{max-width:1280px;margin:0 auto;padding:1.5rem 2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;}
 .footer-left{font-size:11px;color:#C8C8C8;}
 .footer-right{font-size:14px;color:#3D1E5F;font-weight:500;}
@@ -117,7 +127,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--te
       </div>
     </div>
     <div class="header-right">
-      <span class="last-updated">Last updated: 04 May 2026</span>
+      <span class="last-updated">Last updated: 10 May 2026</span>
       <button class="pdf-btn" onclick="window.print()">&#128438; Export PDF</button>
     </div>
   </div>
@@ -156,9 +166,127 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--te
 <script>
 var SC={"On Track":"#3D1E5F","At Risk":"#C4983A","Delayed":"#E8610A","Completed":"#3B7A3A","Not Started":"#C8C8C8"};
 var BC={"on-track":"b-on-track","delayed":"b-delayed","at-risk":"b-at-risk","not-started":"b-not-started","completed":"b-completed"};
-var D=[{"name": "Creatopia", "status": "Delayed", "progress": 30, "budget": "AED 4,000,000", "updates": "RFP updated and shared with IT department to proceed with the procurement process.\nPrototype workshop preparation with the creative community has been initiated.", "sponsor": null, "risk": "Medium", "deliverables": [{"label": "User Journey Video", "url": "https://are01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fyoutu.be%2F929HqPyNLhg&data=05%7C02%7Cc_fadi.elsolh%40dubaiculture.ae%7C62f055d891a6484678f308de9be41be4%7C1ee74fefbf154332b65a6df657279935%7C1%7C0%7C639119601196223069%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=cVxMaDr5whSolLAULAstJFVWMMK1bAa4o%2FqUTnza998%3D&reserved=0"}, {"label": "Creatopia Prototype", "url": "https://creatopia-web.arimac.digital/"}, {"label": "RFP Document", "url": "https://dubaicaa.sharepoint.com/:w:/r/sites/StrategyCorporateExcellenceDepartment/PMO/Projects/Creatopia/Creative_Digital_Platform_RFP.docx"}], "riskdesc": "Risk of underspending the approved 2026 budget allocation, which may affect project continuity and delivery momentum.", "mitigation": "Initiate the RFP publication process to commit and deploy the allocated budget within the fiscal year."}, {"name": "CCI Fund", "status": "On Track", "progress": 40, "budget": null, "updates": "WS1: Progressed on fund options assessment covering fund ambition and capital allocation plan.\nWS2: Completed longlist and shortlist of policy options and initiated cost-benefit assessment.\nWS3: Completed baseline assessment and progressed on benchmarking.", "sponsor": null, "risk": "Low", "deliverables": [{"label": "Shortlisted Instrument - DOF", "url": "https://dubaicaa.sharepoint.com/:p:/r/sites/StrategyCorporateExcellenceDepartment/PMO/Projects/CCI%20Funding%20Program/Shortlisted%20Instruments%20-%20DOF/20260416_DCAA%20Funding%20Attraction%20Program_Shortlist%20of%20Incentives%20%26%20Fundraising%20Instruments_vs.pptx?d=w6bbb1fca46524784a109885f3ea7c680&csf=1&web=1&e=tvcDXi"}, {"label": "Fund Setup and Instruments", "url": "https://dubaicaa.sharepoint.com/:f:/r/sites/StrategyCorporateExcellenceDepartment/PMO/Projects/CCI%20Funding%20Program/WS1%20-%20Arts%20and%20Culture%20Fund%20Set-up?csf=1&web=1&e=Bzod3c"}, {"label": "Incentive Policy Benchmark", "url": "https://dubaicaa.sharepoint.com/:f:/r/sites/StrategyCorporateExcellenceDepartment/PMO/Projects/CCI%20Funding%20Program/WS2%20-%20Private%20Sector%20Incentives%20Policy?csf=1&web=1&e=A000eq"}, {"label": "Survey Results", "url": "https://dubaicaa.sharepoint.com/:p:/r/sites/StrategyCorporateExcellenceDepartment/PMO/Projects/CCI%20Funding%20Program/Creative%20Survey%20Consolidated%20Results/CCI%20Funding%20Attraction_SurveyResults_vs.pptx?d=wfd64d948ed41420c93b22c5aef890fbc&csf=1&web=1&e=OYw46X"}], "riskdesc": "Delays in securing meetings with external government entities pose a risk across all workstreams. Early engagement is required to begin data collection and share Phase 1 findings with TEC for feedback.", "mitigation": "Escalate meeting requests to external government entity leadership and establish a clear engagement timeline. Prioritize outreach to unblock data collection across all workstreams."}, {"name": "Al Qouz", "status": "Delayed", "progress": 20, "budget": null, "updates": "Circulated the overall updated project plan to all committee leaders. Responses received:\n- Data and Analytics team: Meeting scheduled on 5th May with DDA to review project updates.\n- Marketing team leader requested the original plan as a baseline for updates.\n- Additional alignment sessions planned with remaining committee members.", "sponsor": "Budget allocation approval required from DCAA to proceed with Oyoon system integration across the Al Qouz district.", "risk": "Medium", "deliverables": [{"label": "Feasibility Study - International Artists Public Art", "url": "https://dubaicaa.sharepoint.com/:b:/r/sites/StrategyCorporateExcellenceDepartment/PMO/Projects/Dashboard/Project%20Attachments/Al%20Qouz/Feasibility%20Study%20on%20Commissioning%20International%20Artists%20to%20Deliver%20Public%20Art%20in%20Al%20Quoz%20Creative%20Zone-v3.pdf?csf=1&web=1&e=dwsrI4"}, {"label": "Al Qouz Landscaping and Beautification Proposal", "url": "https://dubaicaa.sharepoint.com/:b:/r/sites/StrategyCorporateExcellenceDepartment/PMO/Projects/Dashboard/Project%20Attachments/Al%20Qouz/_%D9%80%20%D8%B9%D8%B1%D8%B6%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9%20%D9%88%D8%AA%D8%AC%D9%85%D9%8A%D9%84%20%D9%85%D9%86%D8%B7%D9%82%D8%A9%20%D8%A7%D9%84%D9%82%D9%88%D8%B2%20%D8%A7%D9%84%D8%A7%D8%A8%D8%AF%D8%A7%D8%B9%D9%8A%D8%A9_%D9%85%D8%B1%D9%81%D9%82%20%D9%A1.pdf?csf=1&web=1&e=jHH0Cl"}, {"label": "Tasks and Action Items Sheet", "url": "https://dubaicaa.sharepoint.com/:x:/r/sites/StrategyCorporateExcellenceDepartment/PMO/Projects/Al%20Qouz%20Creative%20Zone/Task%20Sheet/Copy%20of%20%D8%AA%D9%88%D8%B5%D9%8A%D8%A7%D8%AA%20%D9%85%D8%AD%D8%B6%D8%B1%20%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%20%D8%A7%D9%84%D9%84%D8%AC%D9%86%D8%A9%20%D8%A7%D9%84%D8%B9%D9%84%D9%8A%D8%A7%20%D9%84%D9%84%D9%82%D9%88%D8%B2.xlsx?d=w041b9536524741adb16f51436b275fca&csf=1&web=1&e=bUtiBW"}], "riskdesc": null, "mitigation": null}, {"name": "360", "status": "On Track", "progress": 20, "budget": null, "updates": "Business Requirements Document (BRD) for venue booking is ready.\nBRD for the lease process is currently under development.\nRequirements gathering for the vacating process is in progress.", "sponsor": null, "risk": null, "deliverables": [], "riskdesc": null, "mitigation": null}, {"name": "City Builder", "status": "On Track", "progress": 10, "budget": null, "updates": "Meeting to be scheduled with DAA to confirm Invest in Dubai platform readiness.\nRequirements gathering from subject matter experts (SMEs) is in progress.\nFormal communication initiated with Ejari to obtain technical requirements for system integration.", "sponsor": null, "risk": null, "deliverables": [], "riskdesc": null, "mitigation": null}, {"name": "Integration with Dubai Indicators", "status": "Delayed", "progress": 10, "budget": null, "updates": "Development across all services is complete. The project is pending Dubai Data Authority (DDA) updating their cloud environment to enable the integration.", "sponsor": "Escalation to DDA required to expedite cloud environment update and unblock integration deployment.", "risk": "Low", "deliverables": [], "riskdesc": "Dependency on DDA cloud environment update may cause further delays to integration go-live if not prioritized by DDA.", "mitigation": "Formally escalate to DDA leadership with a clear deadline. Identify an interim workaround to begin partial integration while awaiting full environment readiness."}, {"name": "Dubai Culture Neighborhoods", "status": "Not Started", "progress": 0, "budget": null, "updates": "Project is pending receipt of the approved scope and detailed project brief from the relevant stakeholders.", "sponsor": "Project scope and detailed brief required from sponsor to initiate planning and mobilize the project team.", "risk": null, "deliverables": [], "riskdesc": null, "mitigation": null}];
+var D=[
+  {
+    "name": "Creatopia",
+    "status": "Delayed",
+    "progress": 30,
+    "budget": "AED 4,000,000",
+    "updates": "The RFP has been reviewed and approved by the Contracts Department and is now advancing through the Tendering Committee approval process. Publication is targeted for 12 May, with submissions closing on 12 June.\n\nInvitations for the Prototype Community Feedback Workshop have been extended to selected participants from the Design Thinking session, with the workshop scheduled for 18 May.",
+    "sponsor": null,
+    "risk": "Medium",
+    "deliverables": [
+      {"label": "User Journey Video", "url": "https://are01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fyoutu.be%2F929HqPyNLhg&data=05%7C02%7Cc_fadi.elsolh%40dubaiculture.ae%7C62f055d891a6484678f308de9be41be4%7C1ee74fefbf154332b65a6df657279935%7C1%7C0%7C639119601196223069%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=cVxMaDr5whSolLAULAstJFVWMMK1bAa4o%2FqUTnza998%3D&reserved=0"},
+      {"label": "Creatopia Prototype", "url": "https://creatopia-web.arimac.digital/"},
+      {"label": "RFP Document", "url": "https://dubaicaa.sharepoint.com/:w:/r/sites/StrategyCorporateExcellenceDepartment/PMO/Projects/Creatopia/Creative_Digital_Ecosystem_RFP_Updated_V1,0.docx?d=w66854544840841d8a510e55ecb9e9598&csf=1&web=1&e=fdBcNl"}
+    ],
+    "riskdesc": "There is a risk of underspending the approved 2026 budget allocation, which may jeopardize project continuity and undermine delivery momentum.",
+    "mitigation": "Expedite the RFP publication process to commit and deploy the allocated budget within the current fiscal year."
+  },
+  {
+    "name": "CCI Fund",
+    "status": "On Track",
+    "progress": 40,
+    "budget": null,
+    "updates": "WS1 — Fund Options Assessment: Assessment of fund ambition and capital allocation plan is progressing; a working session with DLD has been conducted.\n\nWS2 — Policy Options: Cost-benefit assessment is advancing; a coordination meeting with Dubai Customs has been held.\n\nWS3 — Benchmarking: Benchmark assessment is progressing on schedule.\n\nWS4 — Program Design: An initial kick-off meeting has been conducted to commence program design activities.\n\nNote: Delays in receiving data and securing 1:1 meetings with external government entities remain a cross-cutting risk across all workstreams. Late sharing of deliverables with TEC and delayed feedback could lead to rework.",
+    "sponsor": null,
+    "risk": "Low",
+    "deliverables": [
+      {"label": "Shortlisted Instrument - DOF", "url": "https://dubaicaa.sharepoint.com/:p:/r/sites/StrategyCorporateExcellenceDepartment/PMO/Projects/CCI%20Funding%20Program/Shortlisted%20Instruments%20-%20DOF/20260416_DCAA%20Funding%20Attraction%20Program_Shortlist%20of%20Incentives%20%26%20Fundraising%20Instruments_vs.pptx?d=w6bbb1fca46524784a109885f3ea7c680&csf=1&web=1&e=tvcDXi"},
+      {"label": "Fund Setup and Instruments", "url": "https://dubaicaa.sharepoint.com/:f:/r/sites/StrategyCorporateExcellenceDepartment/PMO/Projects/CCI%20Funding%20Program/WS1%20-%20Arts%20and%20Culture%20Fund%20Set-up?csf=1&web=1&e=Bzod3c"},
+      {"label": "Incentive Policy Benchmark", "url": "https://dubaicaa.sharepoint.com/:f:/r/sites/StrategyCorporateExcellenceDepartment/PMO/Projects/CCI%20Funding%20Program/WS2%20-%20Private%20Sector%20Incentives%20Policy?csf=1&web=1&e=A000eq"},
+      {"label": "Survey Results", "url": "https://dubaicaa.sharepoint.com/:p:/r/sites/StrategyCorporateExcellenceDepartment/PMO/Projects/CCI%20Funding%20Program/Creative%20Survey%20Consolidated%20Results/CCI%20Funding%20Attraction_SurveyResults_vs.pptx?d=wfd64d948ed41420c93b22c5aef890fbc&csf=1&web=1&e=OYw46X"}
+    ],
+    "riskdesc": "Delays in receiving data and securing 1:1 meetings with external government entities pose a cross-cutting risk across all workstreams. Late sharing of deliverables with TEC and slow feedback cycles may result in rework and timeline slippage.",
+    "mitigation": "Proactively escalate meeting requests to senior leadership at relevant government entities and establish a firm engagement schedule. Prioritize timely delivery of workstream outputs to TEC to allow adequate review windows and reduce the risk of late-stage rework."
+  },
+  {
+    "name": "Al Qouz",
+    "status": "Delayed",
+    "progress": 20,
+    "budget": null,
+    "updates": "The updated project plan has been circulated to all sub-committee leads. Response status per committee:",
+    "committeeUpdates": [
+      {"name": "Creative Support Committee", "status": "received", "label": "Plan Received", "note": ""},
+      {"name": "Data Committee", "status": "received", "label": "Plan Received", "note": ""},
+      {"name": "Infrastructure Committee", "status": "meeting", "label": "Awaiting Revised Input", "note": "Meeting held; prior update submitted to committee head."},
+      {"name": "Marketing Committee", "status": "pending", "label": "Awaiting Update", "note": "Requested original baseline plan; pending submission from Marketing lead."},
+      {"name": "General Plan Committee", "status": "no-response", "label": "No Response", "note": "Multiple follow-up reminders sent."},
+      {"name": "Business Development Committee", "status": "no-response", "label": "No Response", "note": "Multiple follow-up reminders sent."}
+    ],
+    "sponsor": "Budget allocation approval is required from DCAA leadership to proceed with Oyoon system integration across the Al Qouz Creative District.",
+    "risk": "Medium",
+    "deliverables": [
+      {"label": "Feasibility Study - International Artists Public Art", "url": "https://dubaicaa.sharepoint.com/:b:/r/sites/StrategyCorporateExcellenceDepartment/PMO/Projects/Dashboard/Project%20Attachments/Al%20Qouz/Feasibility%20Study%20on%20Commissioning%20International%20Artists%20to%20Deliver%20Public%20Art%20in%20Al%20Quoz%20Creative%20Zone-v3.pdf?csf=1&web=1&e=dwsrI4"},
+      {"label": "Al Qouz Landscaping and Beautification Proposal", "url": "https://dubaicaa.sharepoint.com/:b:/r/sites/StrategyCorporateExcellenceDepartment/PMO/Projects/Dashboard/Project%20Attachments/Al%20Qouz/_%D9%80%20%D8%B9%D8%B1%D8%B6%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9%20%D9%88%D8%AA%D8%AC%D9%85%D9%8A%D9%84%20%D9%85%D9%86%D8%B7%D9%82%D8%A9%20%D8%A7%D9%84%D9%82%D9%88%D8%B2%20%D8%A7%D9%84%D8%A7%D8%A8%D8%AF%D8%A7%D8%B9%D9%8A%D8%A9_%D9%85%D8%B1%D9%81%D9%82%20%D9%A1.pdf?csf=1&web=1&e=jHH0Cl"},
+      {"label": "Tasks and Action Items Sheet", "url": "https://dubaicaa.sharepoint.com/:x:/r/sites/StrategyCorporateExcellenceDepartment/PMO/Projects/Al%20Qouz%20Creative%20Zone/Task%20Sheet/Copy%20of%20%D8%AA%D9%88%D8%B5%D9%8A%D8%A7%D8%AA%20%D9%85%D8%AD%D8%B6%D8%B1%20%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%20%D8%A7%D9%84%D9%84%D8%AC%D9%86%D8%A9%20%D8%A7%D9%84%D8%B9%D9%84%D9%8A%D8%A7%20%D9%84%D9%84%D9%82%D9%88%D8%B2.xlsx?d=w041b9536524741adb16f51436b275fca&csf=1&web=1&e=bUtiBW"}
+    ],
+    "riskdesc": null,
+    "mitigation": null
+  },
+  {
+    "name": "360",
+    "status": "On Track",
+    "progress": 20,
+    "budget": null,
+    "updates": "The Business Requirements Document (BRD) for venue booking has been completed and is ready for review.\n\nThe BRD for the lease process has been completed.\n\nRequirements gathering for the vacating process is actively in progress.",
+    "sponsor": null,
+    "risk": null,
+    "deliverables": [],
+    "riskdesc": null,
+    "mitigation": null
+  },
+  {
+    "name": "City Builder",
+    "status": "On Track",
+    "progress": 10,
+    "budget": null,
+    "updates": "The Business Requirements Document (BRD) has been completed and submitted to DET for review and approval on 27 April, with a follow-up reminder issued on 5 May. A response is still pending.\n\nThe team is awaiting details from the Asset Management Department regarding the list of properties, payment terms and structure, contract templates, and property-specific guidance instructions.",
+    "sponsor": "Escalation is required to address the delay in responses from DET regarding BRD review and approval.",
+    "risk": null,
+    "deliverables": [
+      {"label": "BRD", "url": "https://dubaicaa.sharepoint.com/:w:/r/sites/StrategyCorporateExcellenceDepartment/PMO/Projects/City%20Makers/Deliverables/Service%20360%20-%20Dubai%20Culture%20-%20Rental%20Service%20BRD%20-%20V5.3.docx?d=w460c02d584434809b75113c6dc7bce5d&csf=1&web=1&e=d5GseI"}
+    ],
+    "riskdesc": null,
+    "mitigation": null
+  },
+  {
+    "name": "Integration with Dubai Indicators",
+    "status": "Delayed",
+    "progress": 10,
+    "budget": null,
+    "updates": "Development across all services has been completed. The project is currently on hold, pending the Dubai Data Authority (DDA) updating their cloud environment to enable integration deployment.",
+    "sponsor": "Escalation to DDA leadership is required to expedite the cloud environment update and unblock the integration go-live.",
+    "risk": "Low",
+    "deliverables": [],
+    "riskdesc": "The project's dependency on DDA's cloud environment upgrade poses a risk of further delays to the integration go-live if this update is not prioritized by DDA.",
+    "mitigation": "Issue a formal escalation to DDA leadership with a clearly defined deadline. Identify a viable interim workaround to enable partial integration while the full environment upgrade is pending."
+  },
+  {
+    "name": "Dubai Culture Neighborhoods",
+    "status": "Not Started",
+    "progress": 0,
+    "budget": null,
+    "updates": "Project initiation is pending receipt of the approved scope and detailed project brief from the relevant stakeholders.",
+    "sponsor": "The approved project scope and detailed brief are required from the sponsor to initiate planning and mobilize the project team.",
+    "risk": null,
+    "deliverables": [],
+    "riskdesc": null,
+    "mitigation": null
+  }
+];
 function ss(s){return (s||"").toLowerCase().replace(/ /g,"-");}
 function sc(s){return SC[s]||"#C8C8C8";}
+function buildCommitteeTable(committees){
+  var cls={"received":"ct-received","pending":"ct-pending","no-response":"ct-no-response","meeting":"ct-meeting"};
+  var rows="";
+  for(var i=0;i<committees.length;i++){
+    var c=committees[i];
+    var badgeCls=cls[c.status]||"ct-pending";
+    rows+="<tr><td>"+c.name+"</td><td><span class=\"ct-badge "+badgeCls+"\">"+c.label+"</span>"+(c.note?"<span style=\"font-size:11px;color:#888;margin-left:8px;\">"+c.note+"</span>":"")+"</td></tr>";
+  }
+  return "<table class=\"committee-table\">"+rows+"</table>";
+}
 function renderAll(p){
   var t=p.length,ok=0,at=0,sp=0;
   for(var i=0;i<p.length;i++){if(p[i].status==="On Track")ok++;if(p[i].status==="Delayed"||p[i].status==="At Risk")at++;if(p[i].sponsor)sp++;}
@@ -216,7 +344,9 @@ function renderAll(p){
       (mh?"<div class=\"meta-row\">"+mh+"</div>":"")+
       "<div class=\"progress-row\"><div class=\"progress-track\"><div class=\"progress-fill\" style=\"width:"+x.progress+"%;background:"+col+"\"></div></div><div class=\"progress-pct\">"+x.progress+"%</div></div>"+
       "<div class=\"card-body\">"+
-        "<div><div class=\"slbl\">Recent updates</div><div class=\"stxt\">"+(x.updates||"No updates provided.")+"</div></div>"+
+        "<div><div class=\"slbl\">Recent updates</div><div class=\"stxt\">"+(x.updates||"No updates provided.")+"</div>"+
+        (x.committeeUpdates ? buildCommitteeTable(x.committeeUpdates) : "") +
+        "</div>"+
         "<div><div class=\"slbl\">Sponsor support needed</div>"+(x.sponsor?"<div class=\"spon\">"+x.sponsor+"</div>":"<div class=\"noact\">No action required</div>")+dh+"</div>"+
       "</div>"+rsh+"</div>";
   }
